@@ -1,26 +1,26 @@
-class HelloWorld {
+public class Main {
     
-    public static boolean ispalin(String str)
-    {
-        int[] charcount= new int[26];
-        int oddcount=0;
-        int index;
-        for (char ch:str.toCharArray())
-        {
-            if(Character.isLetter(ch)){
-                index=Character.toLowerCase(ch)-'a';
-                if(charcount[index]%2==1)
+   public static boolean ispalin(String str) {
+    int[] charcount = new int[26];
+    int oddcount = 0;
+    int index;
+    for (char ch : str.toCharArray()) {
+        if (Character.isLetter(ch)) {
+            index = Character.toLowerCase(ch) - 'a';
+            charcount[index]++; 
+            if (charcount[index] % 2 == 1)
                 oddcount++;
-                else
+            else
                 oddcount--;
-            }
         }
-        
-        return oddcount<=1;
     }
+    
+    return oddcount <= 1;
+}
+
     public static void main(String[] args) 
     {
-       String str = "malayAlam";
+       String str = "singam";
        if(ispalin(str)){
            System.out.println("True");
        }
