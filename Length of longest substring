@@ -1,0 +1,25 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "pwwkew";
+        int s = 0, e = 0;
+        Set<Character> seen = new HashSet<>();
+        int maxLength = 0;
+
+        while (e < str.length()) {
+            char ch = str.charAt(e);
+            while (seen.contains(ch)) {
+                seen.remove(str.charAt(s));
+                s++;
+            }
+            seen.add(ch);
+            maxLength = Math.max(maxLength, e - s + 1);
+
+            e++;
+        }
+
+        System.out.println("Length of the longest substring without repeating characters: "+maxLength );
+    }
+}
