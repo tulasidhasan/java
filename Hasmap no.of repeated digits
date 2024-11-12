@@ -1,0 +1,29 @@
+import java.util.HashMap;
+
+public class Main {
+    public static void repeat(int number) {
+        String str = Integer.toString(number);
+        HashMap<Character, Integer> tulasi = new HashMap<>();
+        
+        for (int i = 0; i < str.length(); i++) {
+            char digit = str.charAt(i);
+            tulasi.put(digit, tulasi.getOrDefault(digit, 0) + 1);
+        }
+        
+        int repeatedCount = 0;
+        for (int frequency : tulasi.values()) {
+            if (frequency > 1) {
+                repeatedCount++;
+            }
+        }
+        
+        System.out.println("Number of repeated elements: " + repeatedCount);
+        
+        //System.out.println(tulasi);
+    }
+    
+    public static void main(String[] args) {
+        int number = 772334251;
+        repeat(number);
+    }
+}
