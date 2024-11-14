@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 11; i < 100; i++) {
+            if (prime(i) && sum(i)) {
+                System.out.print(i+" ");
+            }
+        }
+    }
+
+    public static boolean prime(int a) {
+        for (int i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static boolean sum(int a) {
+        int sum = 0;
+        while (a > 0) {
+            sum += a % 10;
+            a /= 10;
+        }
+        return sum % 2 == 0;
+    }
+}
